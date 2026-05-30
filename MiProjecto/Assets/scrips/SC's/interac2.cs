@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class evento2 : MonoBehaviour
+public class interac2 : MonoBehaviour
     //quemar
 {
     //quitar obstaculo

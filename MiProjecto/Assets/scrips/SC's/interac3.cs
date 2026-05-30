@@ -2,18 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class interactuable : MonoBehaviour
-    //puerta
+public class interac3 : MonoBehaviour
 {
-    //activa evento de camara
-
-    //rayCast_Jugador = PlayerCasting
     [SerializeField] bool canOpen;
-    [SerializeField] GameObject thePlayer;
-    [SerializeField] GameObject theCam;
-    [SerializeField] GameObject textOnScreen;
-    [SerializeField] AudioSource lockedDoor;
 
+    [SerializeField] AudioSource suenaDoor;
+    [SerializeField] GameObject theDoor;
 
     void Update()
     {
@@ -54,14 +48,12 @@ public class interactuable : MonoBehaviour
     }
     IEnumerator OpeningDoor()
     {
-        theCam.SetActive(true);
-        thePlayer.SetActive(false);
-        textOnScreen.SetActive(true);
-        //lockedDoor.Play();
-        yield return new WaitForSeconds(3);
-        textOnScreen.SetActive(false);
-        thePlayer.SetActive(true);
-        theCam.SetActive(false);
+        //suenaDoor.Play();
+        theDoor.GetComponent<Animator>().Play("doorOpen");
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        yield return new WaitForSeconds(2);
+
     }
 
 }
+

@@ -31,7 +31,7 @@ public class lightSwitch : MonoBehaviour
     {
         if (interactable == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 toggle = !toggle;
                 //lightSwitchSound.Play();
